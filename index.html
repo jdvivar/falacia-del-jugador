@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>La falacia del Jugador</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+    body {
+        padding-top: 70px;
+        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="display:none">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Start Bootstrap</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row" style="margin-bottom:100px">
+            <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 text-left">
+                <h1>Aplicación práctica de la falacia del jugador</h1>
+                <p class="lead" style="text-transform:uppercase">Con esta sencilla aplicación podremos observar como afectan a largo plazo las apuestas, doblando con dinero finito.</p>
+                <p class="text-justify">Vamos a establecer, por poner números, que empezamos apostando 1€, y vamos doblando la apuesta hasta un límite de 2.000€, apostando al rojo o al negro.</p>
+				<p class="text-justify">En la <strong>apuesta 1</strong>, si ganamos, hemos ganado 1€. ¿Por qué? Apostamos 1€, como acabamos de empezar,
+				nuestro saldo es 0€, por tanto, al ganar la apuesta nos dan 2€. Ganancia: 1€</p>
+				<p class="text-justify">Si llegamos a la <strong>apuesta 2</strong> es que no hemos ganado la 1, por tanto llevamos un saldo de -1€ de la apuesta 1 y doblamos la apuesta, ahora apostamos 2€.
+				Si ganamos, nuevamente nos llevamos 1€. Esta es la estrategia del mordisquito tan famosa de Alvarito y Merchán. ¿Por qué? Si apostamos 2€ con
+				un saldo negativo de 1€, y nos dan 4€: Ganancia +1€</p>
+				<p class="text-justify">Si llegamos a la <strong>apuesta 3</strong> es que hemos fallado en la 1ª y 2ª jugada. Ya vamos un poco mosqueados. No pasa nada: ¡doblamos! Apostamos ahora 4€, pero
+				claro, llevamos un saldo negativo de -3€ (1€ de la primera apuesta y 2€ de la segunda) por tanto... ¡Sorpresa! La ganancia vuelve a ser +1€</p>
+				<p class="text-justify">El jugador, envuelto en un halo de confianza, no tiene más que doblar su apuesta para llevarse 1€ cada vez que gane. Esto ocurre para cada caso hasta que
+				llegamos a la <strong>apuesta 12</strong>. En ese momento el jugador ha perdido 11 apuestas. Es decir lleva un saldo negativo de 1+2+4+8+16+32+64+128+256+512+1024 = -2047€.
+				No pasaría nada, podría apostar 2.048€ que es el doble de la apuesta anterior, y recuperaría 1€, pero hemos establecido el límite de 2.000€, así que
+				el jugador en ese momento perdería 2.047€. Ganancia: -2.047€. Pero claro, para que esto pase, el jugador se tiene que equivocar 11 veces seguidas sin acertar.</p>
+				<p class="small">No se preocupe el lector, en próximas versionas se podrán editar todos los valores: con qué apuesta se empieza (1€ en este caso)
+				y cuál es el límite de apuesta (2.000€ en este caso, o el número de apuestas máximo, 11, son datos consecuentes, uno determina al otro y viceversa).</p>
+				
+				<p>Bien, vamos a tener 3 jugadores. El primero es un jugador que apuesta de forma completamente aleatoria, le vamos a llamar
+				<span class="label label-primary">ALEATORIO</span>.
+				</p>
+				
+				<p>El segundo jugador es el que según mi amigo Merchán no tiene sentido: apostar siempre lo mismo. Le vamos a llamar
+				<span class="label label-primary">FIJO</span>. Por ejemplo: 
+				<span class="badge" style="background-color:tomato">R</span>
+				<span class="badge" style="background-color:tomato">R</span>
+				<span class="badge" style="background-color:tomato">R</span>
+				<span class="badge" style="background-color:tomato">R</span>
+				<span class="badge" style="background-color:tomato">R</span>
+				<span class="badge" style="background-color:tomato">R</span>
+				<span class="badge" style="background-color:tomato">R</span>
+				<span class="badge" style="background-color:tomato">R</span>
+				<span class="badge" style="background-color:tomato">R</span>
+				<span class="badge" style="background-color:tomato">R</span>
+				<span class="badge" style="background-color:tomato">R</span>
+				</p>
+				
+				<p>El tercer jugador va a jugar un mismo patrón siempre, elegido por el usuario. Le vamos a llamar <span class="label label-primary">CUSTOM</span>. Por favor,
+				elija sus 11 apuestas:</br></br>
+					<span class="swap">
+						<a class="btn btn-danger apuesta apuesta-1" style="display:none">R</a>
+						<a class="btn btn-default apuesta apuesta-1">N</a>
+					</span>
+					<span class="swap">
+						<a class="btn btn-danger apuesta apuesta-2">R</a>
+						<a class="btn btn-default apuesta apuesta-2" style="display:none">N</a>
+					</span>
+					<span class="swap">
+						<a class="btn btn-danger apuesta apuesta-3">R</a>
+						<a class="btn btn-default apuesta apuesta-3" style="display:none">N</a>
+					</span>
+					<span class="swap">
+						<a class="btn btn-danger apuesta apuesta-4" style="display:none">R</a>
+						<a class="btn btn-default apuesta apuesta-4">N</a>
+					</span>
+					<span class="swap">
+						<a class="btn btn-danger apuesta apuesta-5" style="display:none">R</a>
+						<a class="btn btn-default apuesta apuesta-5">N</a>
+					</span>
+					<span class="swap">
+						<a class="btn btn-danger apuesta apuesta-6" style="display:none">R</a>
+						<a class="btn btn-default apuesta apuesta-6">N</a>
+					</span>
+					<span class="swap">
+						<a class="btn btn-danger apuesta apuesta-7">R</a>
+						<a class="btn btn-default apuesta apuesta-7" style="display:none">N</a>
+					</span>
+					<span class="swap">
+						<a class="btn btn-danger apuesta apuesta-8">R</a>
+						<a class="btn btn-default apuesta apuesta-8" style="display:none">N</a>
+					</span>
+					<span class="swap">
+						<a class="btn btn-danger apuesta apuesta-9">R</a>
+						<a class="btn btn-default apuesta apuesta-9" style="display:none">N</a>
+					</span>
+					<span class="swap">
+						<a class="btn btn-danger apuesta apuesta-10">R</a>
+						<a class="btn btn-default apuesta apuesta-10" style="display:none">N</a>
+					</span>
+					<span class="swap">
+						<a class="btn btn-danger apuesta apuesta-11" style="display:none">R</a>
+						<a class="btn btn-default apuesta apuesta-11">N</a>
+					</span>
+				</p>
+				
+				<p> Vamos a jugar con el primer jugador. Veamos cuánto ganamos jugando 100 partidas:</p>
+				<p class="lead">
+					<span class="label label-primary">ALEATORIO</span> 100 partidas de 12 apuestas
+				</p>
+				<button type="button" class="btn btn-info" id="juega1-100-btn">JUGAR</button> <small>GANANCIA</small> <span class="h3" id="juega1-100-ganancia"></span>€ (<small>EJECUTADO EN</small> <span id="juega1-100-tiempo"></span>ms)
+                <p>El atento lector tiene que observar lo siguiente: como verá, es muy fácil ganar 100€.
+				Esto es lógico, porque es muy difícil perder 11 apuestas seguidas. ¿Qué ocurre si perdemos una partida y en la apuesta 12 tenemos que rendirnos? Pues que perdemos -2047€.
+				Claro, esto es bastante raro. En alguna ocasión muy muy legana (fíjese que cada vez que pulsas el botón juegas 1200 apuestas: 100 partidas de 12 apuestas cada una)
+				entonces perderemos 99€ - 2047€ = -1948€. Pero casi siempre se gana, ¿no?
+				</p>
+				
+				<p>Digamos que acabamos de jugar al muy corto plazo. Vamos a hacer ahora 10.000 partidas:
+				</p>
+				<p class="lead">
+					<span class="label label-primary">ALEATORIO</span> 10.000 partidas de 12 apuestas
+				</p>
+				<button type="button" class="btn btn-info" id="juega1-10000-btn">JUGAR</button> <small>GANANCIA</small> <span class="h3" id="juega1-10000-ganancia"></span>€ (<small>EJECUTADO EN</small> <span id="juega1-10000-tiempo"></span>ms)
+                <p> ¡Vaya! ¿Qué ocurre ahora? Ahora es casi imposible ganar dinero. Digamos que ahora estamos jugando a largo plazo. Este
+				es básicamente el aspecto de la cuenta corriente de cualquier jugador que caiga en la falacia.
+				</p>
+				
+				<p> Claro, el lector que haya estado jugando un poco con las jugadas de 100 partidas, se habrá percatado de que es relativamente fácil perder 1948€.
+				Alguien que viera eso, jamás caería en la falacia. Uno se pone a hacer cuentas y piensa, joder, tengo que ganar 100€ en 100 partidas 20 veces para poder ganar 2.000€...
+				y esto pasa más de 1 vez cada 20 veces... exacto! Pero eso no lo ve el que cae en la falacia. El que cae en la falacia juega ganando 20€ al día... así:
+				</p>
+				
+				<p class="lead">
+					<span class="label label-primary">ALEATORIO</span> 20 partidas de 12 apuestas (también llamada jugada "Alvarito" de pasar la tarde)
+				</p>
+				<button type="button" class="btn btn-info" id="juega1-20-btn">JUGAR</button> <small>GANANCIA</small> <span class="h3" id="juega1-20-ganancia"></span>€ (<small>EJECUTADO EN</small> <span id="juega1-20-tiempo"></span>ms)
+				
+				<p> ¿A que en está es dificilísimo ver los -1948€ que salían al jugar 100 partidas, que en este caso son 19-2047=-2028€? Dificilísimo no, exactamente 5 veces menos probable (100/20). Eso sí,
+				ganando 20€ cada vez, el día que palmas 2.028€...¿cómo se te queda el cuerpo? Depende de cómo seas, puedes que espabiles y no vuelvas a jugar en tu vida
+				o puede que te vayas al banco a pedir un préstamo. Esto es lo que ve el jugador ingenuo: "Yo le he visto ganar 20€ muchas veces". Exacto, en el corto
+				plazo. Aquí tienes la prueba. Le he tenido que dar 43 veces para que me salga -2.028€. Imagínate un tío que lleve 42 días seguidos (2 meses) ganando
+				20€ cada día, ¡se piensa que se va a forrar! En mi caso, ha ganado 20x20=400€, pero el día 43 perdió 2.028... no salen las cuentas, ¿verdad?
+				</p>
+				
+				<p> Bueno, ahora vamos a por la otra falacia del jugador Merchán: la variabilidad de los resultados. Por alguna extraña razón, este jugador cree que es
+				más probable ir ganando si hacemos apuestas variadas. Digamos que, según su teoría, apostar SIEMPRE al rojo sería una apuesta terrible, que no tendría
+				ningún sentido. Veamos qué le ocurre a un jugador que juega 100 veces 12 apuestas apostando siempre al rojo:
+				
+				<p class="lead">
+					<span class="label label-primary">FIJO</span> 100 partidas de 12 apuestas
+				</p>
+				<button type="button" class="btn btn-info" id="juega2-100-btn">JUGAR</button> <small>GANANCIA</small> <span class="h3" id="juega2-100-ganancia"></span>€ (<small>EJECUTADO EN</small> <span id="juega2-100-tiempo"></span>ms)
+                <p> Vaya, parece que siempre gana 100€, aunque así de vez en cuando sale -1948€. Igual que el jugador aleatorio. Claro, al fin y al cabo,
+				que salgan 11 negros parece bastante difícil. He ahí la falacia: es exactamente igual de difícil que cualquier otra combinación de 12 apuestas.
+				Definitivamente no, cambiar de vez en cuando de color no hace más probable que ganes. ¿Hace falta que ponga más partidas o va
+				ya entrando en razón? Por si acaso, pongo el juego con 10.000 partidas... que evidentemente arrojará los mismos resultados que el jugador aleatorio:</p>
+				<p class="lead">
+					<span class="label label-primary">FIJO</span> 10.000 partidas de 12 apuestas
+				</p>
+				<button type="button" class="btn btn-info" id="juega2-10000-btn">JUGAR</button> <small>GANANCIA</small> <span class="h3" id="juega2-10000-ganancia"></span>€ (<small>EJECUTADO EN</small> <span id="juega2-10000-tiempo"></span>ms)
+                
+				<br>
+				<br>
+				<small>(página sin terminar: faltan los otros dos tipos de juego <span class="label label-primary">FIJO</span> y <span class="label label-primary">CUSTOM</span> y el modo con todos los parámetros personalizados)</small>
+            
+			
+			</div>
+			
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery Version 1.11.1 -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+	
+	<script>
+        $(document).ready(function() {
+			
+			$('.swap').click(function(){
+				$(this).find('a.apuesta').toggle();
+			});
+			
+			$('#juega1-100-btn').click(function(){
+			
+				$('#juega1-100-ganancia').text(juego(juega1,100,11));
+				$('#juega1-100-tiempo').text(perf);
+			
+			});
+			
+			$('#juega1-10000-btn').click(function(){
+			
+				$('#juega1-10000-ganancia').text(juego(juega1,10000,11));
+				$('#juega1-10000-tiempo').text(perf);
+			
+			});
+			
+			$('#juega1-20-btn').click(function(){
+			
+				$('#juega1-20-ganancia').text(juego(juega1,20,11));
+				$('#juega1-20-tiempo').text(perf);
+			
+			});
+			
+			$('#juega2-100-btn').click(function(){
+			
+				$('#juega2-100-ganancia').text(juego(juega2,100,11));
+				$('#juega2-100-tiempo').text(perf);
+			
+			});
+			
+			$('#juega2-10000-btn').click(function(){
+			
+				$('#juega2-10000-ganancia').text(juego(juega2,10000,11));
+				$('#juega2-1000-tiempo').text(perf);
+			
+			});
+			
+		});
+		
+		function tirar () {
+			return Math.floor(Math.random()*2);
+		}
+		
+		function juega1 (maxApuestas) {
+		
+			var apuestaActual = 1;
+			var ganancia = 1;
+		
+			while (apuestaActual!=maxApuestas) {
+			
+				if (tirar()==tirar())
+					break;
+				else
+					apuestaActual++;
+			};
+			
+			if (apuestaActual==maxApuestas)
+				ganancia = 1 - Math.pow(2,maxApuestas);
+				
+			return ganancia;
+			
+		}
+		
+		function juega2 (maxApuestas) {
+		
+			var apuestaActual = 1;
+			var ganancia = 1;
+		
+			while (apuestaActual!=maxApuestas) {
+			
+				if (tirar()==0)
+					break;
+				else
+					apuestaActual++;
+			};
+			
+			if (apuestaActual==maxApuestas)
+				ganancia = 1 - Math.pow(2,maxApuestas);
+				
+			return ganancia;
+			
+		}
+		
+		
+
+		var perf;
+		
+		function juego (juega,numero,maxApuestas){
+		
+			console.log('juego');
+		
+			var t0 = performance.now();
+		
+			var ganancia = 0;
+			
+			while (numero!=0) {
+				ganancia = ganancia + juega(maxApuestas);
+				numero--;
+			}
+			
+			var t1 = performance.now();
+			
+			perf = t1-t0;
+			
+			console.log('ganancia:'+ganancia);
+			return ganancia;
+		}
+		
+	</script>
+
+</body>
+
+</html>
+
